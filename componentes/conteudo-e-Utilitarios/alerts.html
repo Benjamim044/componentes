@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Alertas (Alerts) com JS Puro</title>
+  <style>
+    /* Estilo base para o alert */
+    .alert {
+      padding: 15px 20px;
+      margin: 15px;
+      border-radius: 5px;
+      position: relative;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    /* Tipos de alertas */
+    .alert-success {
+      background-color: #4CAF50;
+    }
+
+    .alert-warning {
+      background-color: #ff9800;
+    }
+
+    .alert-error {
+      background-color: #f44336;
+    }
+
+    /* Botão de fechar */
+    .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Exemplos de Alertas</h2>
+
+  <div class="alert alert-success">
+    <button class="close-btn">&times;</button>
+    Sucesso! Sua operação foi realizada com êxito.
+  </div>
+
+  <div class="alert alert-warning">
+    <button class="close-btn">&times;</button>
+    Atenção! Verifique os dados inseridos.
+  </div>
+
+  <div class="alert alert-error">
+    <button class="close-btn">&times;</button>
+    Erro! Algo deu errado.
+  </div>
+
+  <script>
+    // Seleciona todos os botões de fechar dentro dos alerts
+    const closeButtons = document.querySelectorAll('.close-btn');
+
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Ao clicar, esconde o alert pai (a div.alert)
+        btn.parentElement.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

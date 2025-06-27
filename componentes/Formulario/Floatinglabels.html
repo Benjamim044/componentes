@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo de Floating Labels</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    .floating-group {
+      position: relative;
+      margin-bottom: 30px;
+      max-width: 400px;
+    }
+
+    .floating-group input {
+      width: 100%;
+      padding: 16px 10px 16px 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    .floating-group label {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      background-color: white;
+      padding: 0 5px;
+      color: #aaa;
+      font-size: 16px;
+      pointer-events: none;
+      transition: 0.2s ease all;
+    }
+
+    .floating-group input:focus + label,
+    .floating-group input:not(:placeholder-shown) + label {
+      top: -8px;
+      left: 8px;
+      font-size: 13px;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Exemplo de Floating Labels</h2>
+
+  <div class="floating-group">
+    <input type="text" id="nome" placeholder=" " required />
+    <label for="nome">Nome completo</label>
+  </div>
+
+  <div class="floating-group">
+    <input type="email" id="email" placeholder=" " required />
+    <label for="email">E-mail</label>
+  </div>
+
+</body>
+</html>

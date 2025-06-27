@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo de Progress Bar</title>
+  <style>
+    .progress-container {
+      width: 100%;
+      background-color: #ff9b9b;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 30px;
+      margin-top: 40px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background-color: #007bff;
+      text-align: center;
+      line-height: 30px;
+      color: rgb(0, 0, 0);
+      transition: width 0.5s;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Exemplo de Progress Bar</h2>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar">0%</div>
+  </div>
+
+  <button onclick="increaseProgress()">Aumentar Progresso</button>
+
+  <script>
+    let progress = 0;
+    const progressBar = document.getElementById('progressBar');
+
+    function increaseProgress() {
+      if (progress < 100) {
+        progress += 10;
+        progressBar.style.width = progress + '%';
+        progressBar.textContent = progress + '%';
+      }
+    }
+  </script>
+
+</body>
+</html>

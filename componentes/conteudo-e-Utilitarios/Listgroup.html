@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo de List Group</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+    }
+    .list-group {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .list-group-item {
+      padding: 12px 20px;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .list-group-item:last-child {
+      border-bottom: none;
+    }
+
+    .list-group-item:hover {
+      background-color: #f0f0f0;
+    }
+
+    .list-group-item.active {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Exemplo de List Group</h2>
+
+  <ul class="list-group" id="listGroup">
+    <li class="list-group-item">Item 1</li>
+    <li class="list-group-item">Item 2</li>
+    <li class="list-group-item">Item 3</li>
+    <li class="list-group-item">Item 4</li>
+    <li class="list-group-item">Item 5</li>
+  </ul>
+
+  <script>
+    const listItems = document.querySelectorAll('.list-group-item');
+
+    listItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Remove a classe active de todos os itens
+        listItems.forEach(i => i.classList.remove('active'));
+        // Adiciona a classe active no item clicado
+        item.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

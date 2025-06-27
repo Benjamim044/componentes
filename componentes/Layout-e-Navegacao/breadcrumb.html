@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo de Breadcrumb</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    nav.breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      background: #f8f9fa;
+      border-radius: 0.25rem;
+      padding: 8px 15px;
+      max-width: 600px;
+    }
+
+    nav.breadcrumb a {
+      color: #007bff;
+      text-decoration: none;
+      margin-right: 5px;
+      font-size: 14px;
+    }
+
+    nav.breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    nav.breadcrumb span.separator {
+      margin-right: 5px;
+      color: #6c757d;
+      user-select: none;
+    }
+
+    nav.breadcrumb span.current {
+      color: #6c757d;
+      font-weight: bold;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Exemplo de Breadcrumb</h2>
+
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="#">Home</a>
+    <span class="separator">&gt;</span>
+    <a href="#">Categoria</a>
+    <span class="separator">&gt;</span>
+    <span class="current">Produto</span>
+  </nav>
+
+</body>
+</html>

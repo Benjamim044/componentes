@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Accordion com JS Puro</title>
+  <style>
+    /* Estilo básico do accordion */
+    .accordion {
+      background-color: #eee;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+      margin-top: 5px;
+    }
+
+    .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .accordion.active {
+      background-color: #ccc;
+    }
+
+    /* Painel escondido por padrão */
+    .panel {
+      padding: 0 15px;
+      display: none;
+      background-color: white;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Accordion Exemplo</h2>
+
+  <button class="accordion">Seção 1</button>
+  <div class="panel">
+    <p>Conteúdo da seção 1.</p>
+  </div>
+
+  <button class="accordion">Seção 2</button>
+  <div class="panel">
+    <p>Conteúdo da seção 2.</p>
+  </div>
+
+  <button class="accordion">Seção 3</button>
+  <div class="panel">
+    <p>Conteúdo da seção 3.</p>
+  </div>
+
+  <script>
+    // Seleciona todos os botões com classe 'accordion'
+    const accordions = document.querySelectorAll('.accordion');
+
+    accordions.forEach(button => {
+      button.addEventListener('click', () => {
+        // Alterna a classe 'active' para o botão clicado
+        button.classList.toggle('active');
+
+        // Seleciona o painel logo após o botão
+        const panel = button.nextElementSibling;
+
+        // Alterna exibição do painel
+        if (panel.style.display === 'block') {
+          panel.style.display = 'none';
+        } else {
+          panel.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

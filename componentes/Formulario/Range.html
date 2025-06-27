@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo de Range Slider</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    .range-container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .valor {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Exemplo de Range (Slider)</h2>
+
+  <div class="range-container">
+    <label for="volume">Volume:</label>
+    <input type="range" id="volume" min="0" max="100" value="50" oninput="atualizarValor(this.value)" />
+    <div class="valor">Valor atual: <span id="valorAtual">50</span></div>
+  </div>
+
+  <script>
+    function atualizarValor(valor) {
+      document.getElementById('valorAtual').textContent = valor;
+    }
+  </script>
+
+</body>
+</html>

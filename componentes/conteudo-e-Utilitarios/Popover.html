@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo de Popover</title>
+  <style>
+    .popover-container {
+      position: relative;
+      display: inline-block;
+      margin: 50px;
+    }
+
+    .popover-trigger {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .popover-content {
+      position: absolute;
+      top: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+    }
+
+    .popover-content::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent #fff transparent;
+    }
+
+    .popover-container.show .popover-content {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popover-title {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="popover-container" id="popover1">
+    <button class="popover-trigger">Passe o mouse aqui</button>
+    <div class="popover-content">
+      <div class="popover-title">Título do Popover</div>
+      <div>Este é o conteúdo extra que aparece no popover.</div>
+    </div>
+  </div>
+
+  <script>
+    const popover = document.getElementById('popover1');
+    const trigger = popover.querySelector('.popover-trigger');
+
+    trigger.addEventListener('mouseenter', () => {
+      popover.classList.add('show');
+    });
+
+    trigger.addEventListener('mouseleave', () => {
+      popover.classList.remove('show');
+    });
+  </script>
+
+</body>
+</html>

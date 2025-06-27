@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo de Button Group</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    .btn-group {
+      display: inline-flex;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .btn-group button {
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-group button + button {
+      border-left: 1px solid #0056b3;
+    }
+
+    .btn-group button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Exemplo de Button Group</h2>
+
+  <div class="btn-group">
+    <button>Esquerda</button>
+    <button>Centro</button>
+    <button>Direita</button>
+  </div>
+
+</body>
+</html>

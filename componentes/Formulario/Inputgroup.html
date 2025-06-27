@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo de Input Group</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    .input-group {
+      display: flex;
+      max-width: 400px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .input-group input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .input-group button {
+      background-color: #007bff;
+      color: white;
+      padding: 0 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .input-group button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Exemplo de Input Group</h2>
+
+  <div class="input-group">
+    <input type="text" placeholder="Buscar..." id="busca" />
+    <button onclick="buscar()">Pesquisar</button>
+  </div>
+
+  <script>
+    function buscar() {
+      const valor = document.getElementById('busca').value;
+      alert('Você buscou por: ' + valor);
+    }
+  </script>
+
+</body>
+</html>

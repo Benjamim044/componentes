@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Badge (Indicadores)</title>
+  <style>
+    .badge {
+      display: inline-block;
+      padding: 5px 10px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #007bff;
+      border-radius: 12px;
+    }
+
+    .badge-success {
+      background-color: #28a745;
+    }
+
+    .badge-warning {
+      background-color: #ffc107;
+      color: #000;
+    }
+
+    .badge-error {
+      background-color: #dc3545;
+    }
+
+    .container {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Exemplo de Badges</h2>
+
+    <p>Mensagens <span class="badge">4</span></p>
+    <p>Notificações <span class="badge badge-success">7</span></p>
+    <p>Alertas <span class="badge badge-warning">2</span></p>
+    <p>Erros <span class="badge badge-error">1</span></p>
+
+    <button onclick="incrementBadge()">Clique para +1 na badge</button>
+    <span class="badge" id="dynamic-badge">0</span>
+  </div>
+
+  <script>
+    function incrementBadge() {
+      // Pega o badge pelo id
+      const badge = document.getElementById('dynamic-badge');
+      // Converte o texto em número e soma 1
+      let count = parseInt(badge.textContent, 10);
+      badge.textContent = count + 1;
+    }
+  </script>
+
+</body>
+</html>

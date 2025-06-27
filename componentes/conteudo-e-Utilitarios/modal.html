@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo de Modal</title>
+  <style>
+    /* Estilo do fundo escuro */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* Estilo da janela modal */
+    .modal {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 400px;
+      max-width: 90%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    /* Botão fechar */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    /* Botão para abrir o modal */
+    #openModalBtn {
+      display: block;
+      margin: 40px auto;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="openModalBtn">Abrir Modal</button>
+
+  <!-- Estrutura do modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="close-btn" id="closeModalBtn">&times;</button>
+      <h2>Janela Modal</h2>
+      <p>Este é um exemplo básico de uma janela modal feita com HTML, CSS e JavaScript puros.</p>
+    </div>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const modalOverlay = document.getElementById('modalOverlay');
+
+    // Abre o modal ao clicar no botão
+    openBtn.addEventListener('click', () => {
+      modalOverlay.style.display = 'flex';
+    });
+
+    // Fecha o modal ao clicar no botão fechar
+    closeBtn.addEventListener('click', () => {
+      modalOverlay.style.display = 'none';
+    });
+
+    // Fecha o modal se clicar fora da área da modal
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo de Checks & Radios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    legend {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Exemplo de Checkbox e Radio</h2>
+
+  <form>
+    <!-- Checkbox: escolha múltipla -->
+    <fieldset>
+      <legend>Quais linguagens você conhece?</legend>
+
+      <label><input type="checkbox" name="linguagens" value="html"> HTML</label>
+      <label><input type="checkbox" name="linguagens" value="css"> CSS</label>
+      <label><input type="checkbox" name="linguagens" value="js"> JavaScript</label>
+    </fieldset>
+
+    <!-- Radio: escolha única -->
+    <fieldset>
+      <legend>Qual seu sistema operacional?</legend>
+
+      <label><input type="radio" name="so" value="windows" checked> Windows</label>
+      <label><input type="radio" name="so" value="linux"> Linux</label>
+      <label><input type="radio" name="so" value="mac"> MacOS</label>
+    </fieldset>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+</body>
+</html>

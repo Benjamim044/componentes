@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo de Collapse</title>
+  <style>
+    .collapse-container {
+      width: 600px;
+      margin: 30px auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .collapse-header {
+      background-color: #f1f1f1;
+      padding: 15px;
+      cursor: pointer;
+      user-select: none;
+      font-weight: bold;
+    }
+
+    .collapse-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 0 15px;
+      background-color: #fff;
+    }
+
+    .collapse-content.open {
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Exemplo de Collapse</h2>
+
+  <div class="collapse-container">
+    <div class="collapse-header" onclick="toggleCollapse()">
+      Clique para expandir ou esconder
+    </div>
+    <div class="collapse-content" id="collapseContent">
+      <p>Este é o conteúdo escondido que será mostrado quando você clicar no cabeçalho. Você pode colocar texto, imagens ou qualquer outro elemento HTML aqui.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleCollapse() {
+      const content = document.getElementById('collapseContent');
+      if (content.style.maxHeight) {
+        // Fecha o collapse
+        content.style.maxHeight = null;
+        content.classList.remove("open");
+      } else {
+        // Abre o collapse ajustando a altura máxima
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.classList.add("open");
+      }
+    }
+  </script>
+
+</body>
+</html>

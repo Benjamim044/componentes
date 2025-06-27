@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo de Tooltip</title>
+  <style>
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+      margin: 50px;
+    }
+
+    .tooltip-trigger {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      width: 140px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 4px;
+      padding: 8px;
+      position: absolute;
+      z-index: 10;
+      bottom: 125%; /* Posiciona acima do botão */
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip-text::after {
+      content: "";
+      position: absolute;
+      top: 100%; /* seta apontando para o botão */
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #333 transparent transparent transparent;
+    }
+
+    .tooltip-container.show .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tooltip-container" id="tooltip1">
+    <button class="tooltip-trigger">Passe o mouse aqui</button>
+    <div class="tooltip-text">Esta é uma dica (tooltip)!</div>
+  </div>
+
+  <script>
+    const tooltip = document.getElementById('tooltip1');
+    const trigger = tooltip.querySelector('.tooltip-trigger');
+
+    trigger.addEventListener('mouseenter', () => {
+      tooltip.classList.add('show');
+    });
+
+    trigger.addEventListener('mouseleave', () => {
+      tooltip.classList.remove('show');
+    });
+  </script>
+
+</body>
+</html>

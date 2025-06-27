@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo de Paginação</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    .pagination {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    .pagination li {
+      margin: 0 5px;
+    }
+
+    .pagination a {
+      display: block;
+      padding: 8px 12px;
+      text-decoration: none;
+      color: #007bff;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+      user-select: none;
+      transition: background-color 0.3s;
+    }
+
+    .pagination a:hover {
+      background-color: #e9ecef;
+    }
+
+    .pagination .active a {
+      background-color: #007bff;
+      color: white;
+      border-color: #007bff;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Exemplo de Paginação</h2>
+
+  <ul class="pagination" aria-label="Paginação">
+    <li><a href="#">&laquo;</a></li>
+    <li><a href="#">1</a></li>
+    <li class="active"><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">&raquo;</a></li>
+  </ul>
+
+</body>
+</html>
